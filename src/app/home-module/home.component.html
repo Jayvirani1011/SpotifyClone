@@ -1,0 +1,23 @@
+<div class="container mt-3">
+    <div class="row">
+        <h1>Get All Songs List</h1>
+        <mat-card class="example-card col-md-3 card-margin" *ngFor="let song of songList">
+            <mat-card-header *ngIf="songList">
+                <!-- <div mat-card-avatar class="songList-header-image"></div> -->
+                <mat-card-title><b>Song Name: </b>{{ song.name }}</mat-card-title>
+                <mat-card-title class="right"><b>Album Type: </b>{{ song.album_type }}</mat-card-title>
+            </mat-card-header>
+            <img class="rounded float-start" mat-card-image src={{song.images[0].url}} alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p><b>Song Release Date: </b>{{ song.release_date }}</p>
+                <p><b>Song Release Date Precision: </b>{{ song.release_date_precision }}</p>
+                <p><b>Song Type: </b>{{ song.type }}</p>
+                <p><b>Total Track: </b>{{ song.total_tracks }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="warn">Play Song</button>&nbsp;&nbsp;
+                <button mat-raised-button color="accent" (click)="openDialog()">View Details</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

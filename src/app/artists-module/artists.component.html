@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Searching the artists</h1>
+
+    <mat-form-field>
+        <mat-label>Artist</mat-label>
+        <input type="text" matInput [formControl]="art" placeholder="ok" [(ngModel)]="artistsName">
+        <mat-error *ngIf="art.hasError('text') && !art.hasError('required')">
+            Please enter a valid Artist name
+        </mat-error>
+        <mat-error *ngIf="art.hasError('required')">
+            Artist Required <strong>required</strong>
+        </mat-error>
+    </mat-form-field>&nbsp;&nbsp;
+    <button mat-raised-button color="accent" (click)="searchArtist()">Search</button>
+    
+    <!-- <mat-divider></mat-divider> -->
+    
+    <h1 *ngIf="artistsRec">Artists Detaisl's</h1>
+    <div class="row" *ngIf="artistsRec">
+        <mat-card class="example-card col-md-3 card-margin" *ngFor="let artist of artistsRec">
+            <mat-card-header>
+                <!-- <div mat-card-avatar class="songList-header-image"></div> -->
+                <mat-card-title><b>Artists Name: </b>{{artist.name}}</mat-card-title>
+                <mat-card-title class="right"><b>Artist Type: </b>{{artist.type}}</mat-card-title>
+            </mat-card-header>
+            <img class="rounded float-start image-style" mat-card-image src={{artist.images[0].url}} alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p><b>Artists Genres: </b>{{artist.genres}}</p>
+                <p><b>Artists Popularity: </b>{{artist.popularity}}</p>
+                <p><b>Total Followers: </b>{{artist.followers.total}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <!-- <button mat-raised-button color="warn">Play Song</button>&nbsp;&nbsp; -->
+                <button mat-raised-button color="accent">View Details</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

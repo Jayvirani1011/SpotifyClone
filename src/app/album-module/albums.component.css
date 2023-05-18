@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Allura';
+}
+
+.font-style {
+    font-size: 5px;
+}
+
+.example-card {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    background-color: #f1f1f1;
+    width: 300px;
+    margin: 55px;
+}
+
+.card-margin {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.example-card2 {
+    max-width: 400px;
+    margin-bottom: 8px;
+}
+
+.image-style {
+    width: 380px;
+    height: 300px;
+    margin: 10px;
+}
